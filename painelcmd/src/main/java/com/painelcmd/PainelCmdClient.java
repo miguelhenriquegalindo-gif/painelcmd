@@ -1,4 +1,3 @@
-```java
 package com.painelcmd;
 
 import com.mojang.blaze3d.platform.InputConstants;
@@ -20,8 +19,6 @@ public class PainelCmdClient implements ClientModInitializer {
                         Identifier.fromNamespaceAndPath("painelcmd", "main")
                 );
 
-        // Tecla de atalho para abrir o painel.
-        // Pode ser alterada em Opções > Controles.
         OPEN_KEY = new KeyMapping(
                 "key.painelcmd.open",
                 InputConstants.Type.KEYSYM,
@@ -42,4 +39,3 @@ public class PainelCmdClient implements ClientModInitializer {
         });
     }
 }
-```
