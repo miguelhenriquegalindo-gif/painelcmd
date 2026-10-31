@@ -1,0 +1,33 @@
+name: Compilar mod Minecraft
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+
+      - name: Configurar Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+
+      - name: Configurar Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Compilar mod
+        run: gradle build
+        working-directory: painelcmd
+
+      - name: Disponibilizar arquivo JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: PainelCmd-JAR
+          path: painelcmd/build/libs/*.jar
