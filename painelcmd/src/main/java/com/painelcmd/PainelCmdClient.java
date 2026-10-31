@@ -1,3 +1,4 @@
+```java
 package com.painelcmd;
 
 import com.mojang.blaze3d.platform.InputConstants;
@@ -15,24 +16,30 @@ public class PainelCmdClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         KeyMapping.Category categoria =
-                KeyMapping.Category.register(Identifier.fromNamespaceAndPath("painelcmd", "main"));
+                KeyMapping.Category.register(
+                        Identifier.fromNamespaceAndPath("painelcmd", "main")
+                );
 
-        // GLFW_KEY_GRAVE_ACCENT = tecla ' " do teclado ABNT2 (a que fica à esquerda do 1).
-        // Dá pra trocar em Opções > Controles.
+        // Tecla de atalho para abrir o painel.
+        // Pode ser alterada em Opções > Controles.
         OPEN_KEY = new KeyMapping(
                 "key.painelcmd.open",
                 InputConstants.Type.KEYSYM,
                 GLFW.GLFW_KEY_GRAVE_ACCENT,
-                categoria);
+                categoria
+        );
+
         KeyMappingHelper.registerKeyMapping(OPEN_KEY);
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             NightVision.tick(client);
+
             while (OPEN_KEY.consumeClick()) {
-                if (client.screen == null && client.player != null) {
-                    client.setScreen(new PainelScreen());
+                if (client.gui.screen() == null && client.player != null) {
+                    client.gui.setScreen(new PainelScreen());
                 }
             }
         });
     }
 }
+```
