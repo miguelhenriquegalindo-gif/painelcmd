@@ -1,0 +1,19 @@
+COMO GERAR O .JAR PELO GITHUB (SEM INSTALAR GRADLE)
+
+1. Entre em https://github.com e crie uma conta ou entre na sua conta.
+2. Crie um repositório novo (New repository), por exemplo: PainelCmd-Fabric-26.2.
+   Pode deixar Public ou Private. Não marque para adicionar README, .gitignore ou licença.
+3. Extraia este ZIP no computador.
+4. Abra a pasta painelcmd extraída. Selecione TUDO que está dentro dela (src, build.gradle,
+   gradle.properties, settings.gradle, LEIA-ME.txt, .github) e envie esses arquivos/pastas
+   para a página do repositório usando Add file > Upload files.
+   IMPORTANTE: envie o conteúdo da pasta painelcmd, não a pasta painelcmd como uma pasta
+   extra dentro do repositório. A pasta .github precisa estar na raiz do repositório.
+5. Confirme com Commit changes.
+6. Abra a aba Actions do repositório. O workflow "Build Fabric mod" deve começar.
+7. Abra a execução mais recente. Se ficar verde (sucesso), desça até Artifacts e baixe
+   PainelCmd-Fabric-26.2.zip.
+8. Extraia o ZIP baixado; dentro dele estará o arquivo .jar. Coloque-o em .minecraft/mods.
+
+Se a execução falhar, abra a execução, copie o trecho vermelho do erro e envie aqui.
+Não renomeie o ZIP do projeto para .jar: o .jar precisa ser compilado.

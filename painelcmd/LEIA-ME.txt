@@ -1,0 +1,12 @@
+PAINEL DE COMANDOS - mod Fabric para Minecraft Java 26.2 (somente cliente)
+
+TECLA: a tecla ' " (ABNT2, à esquerda do 1). Dá pra trocar em Opções > Controles > Painel de Comandos.
+No painel: ajuda | nv [on|off] | limpar. Enter executa, seta pra cima repete o último, Esc ou a tecla fecha.
+
+COMO COMPILAR
+1) Instale o JDK 25.
+2) Opção mais fácil: gere um projeto base em https://fabricmc.net/develop/template (Minecraft 26.2, mod id "painelcmd",
+   package "com.painelcmd"), apague o src/main dele e copie a pasta src/ deste zip no lugar.
+   (Alternativa: use o build.gradle/gradle.properties daqui com um Gradle 9.x instalado.)
+3) No terminal da pasta: ./gradlew build   (Windows: gradlew.bat build)
+4) O mod fica em build/libs/painelcmd-1.0.0.jar -> coloque em .minecraft/mods junto com o Fabric API 26.2.
